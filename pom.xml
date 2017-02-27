@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.thewalkingcode</groupId>
-    <artifactId>ExerciseZiibd</artifactId>
+    <artifactId>simpleExchange</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>ExerciseZiibd</name>
@@ -182,7 +182,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>ExerciseZiibd</finalName>
+        <finalName>simpleExchange</finalName>
     </build>
 
 </project>
