@@ -1,0 +1,56 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- META -->
+    <title>EXCHANGE</title>
+    <meta charset="UTF-8">
+    <!-- FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <!-- SCRIPT -->
+    <script src="../../script/addaction.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row center-container">
+        <div class="border center fit">
+            <h1>Add Action</h1>
+            <form name="f" th:action="@{/profile/additem}" th:object="${itemDTO}" method="POST">
+                <table>
+                    <tr>
+                        <td>CODE:</td>
+                        <td>
+                            <select id="code" onchange="changeSelect()" th:field="*{code}">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>UNIT:</td>
+                        <td>
+                            <input id="unit" onchange="changeUnit()" type="text" th:field="*{unit}" name="unit" required="required" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PRICE:</td>
+                        <td>
+                            <input id="price" type="text" th:field="*{price}" name="price" required="required" value="" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input id="submit" class="btn-cls" name="submit" type="submit" value="Add Item">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

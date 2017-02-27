@@ -1,0 +1,74 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- META -->
+    <title>EXCHANGE</title>
+    <meta charset="UTF-8">
+    <!-- FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min.css">
+    <!-- SCRIPT -->
+    <script src="../../script/exchange.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row border blocks">
+        <div class="col-10">
+            <h2><i class="fa fa-gg-circle" aria-hidden="true"></i> EXCHANGE</h2>
+        </div>
+        <div class="col-2">
+            <p class="text-right top-menu">
+                <a href="/profile"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                <a href="/logout"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+            </p>
+        </div>
+    </div>
+    <div id="errorbox"></div>
+    <div id="infobox"></div>
+    <div class="row">
+        <div class="col-6 border">
+            <p class="center">Server Date: <span id="server-date"> </span></p>
+            <hr>
+            <div id="tableItems">
+
+            </div>
+        </div>
+        <div class="col-5 border">
+            <h4 class="center">MY ITEMS</h4>
+            <hr>
+            <table id="tableMyItems">
+                <thead>
+                <tr>
+                    <td>COMPANY</td>
+                    <td>UNIT</td>
+                    <td>PRICE</td>
+                    <td>AMOUNT</td>
+                    <td>ACTIONS</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="userItem: ${userItems}">
+                    <td th:text="${userItem.code}"/>
+                    <td th:text="${userItem.unit}"/>
+                    <td th:text="${userItem.price}"/>
+                    <td th:text="${userItem.amount}"/>
+                    <td><a th:href="@{'/sell/' + ${userItem.uuid}}">
+                        <button class="btn-cls btn-cls-small">SELL</button>
+                    </a></td>
+                </tr>
+                </tbody>
+            </table>
+            <hr>
+            <p>WALLET: <span th:text="${wallet}">w</span> PLN</p>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script src="../../script/exchange-info.js"></script>
+</body>

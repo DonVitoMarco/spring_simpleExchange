@@ -1,0 +1,60 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- META -->
+    <title>EXCHANGE</title>
+    <meta charset="UTF-8">
+    <!-- FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row border blocks">
+        <h2><i class="fa fa-gear" aria-hidden="true"></i> PROFILE</h2>
+    </div>
+    <div class="row border blocks">
+        <h3>SETTINGS</h3>
+        <p>USERNAME: <span th:text="${username}">u</span></p>
+    </div>
+    <div class="row border blocks">
+        <h3>WALLET</h3>
+        <p>WALLET: <span th:text="${wallet}">w</span> PLN<a th:href="@{/profile/chargewallet}"> <i class="fa fa-plus"
+                                                                                                 aria-hidden="true"></i></a>
+        </p>
+    </div>
+    <div class="row border blocks">
+        <h3>ITEMS</h3>
+        <table id="tableMyItems" class="center">
+            <thead>
+                <tr>
+                    <td>COMPANY</td>
+                    <td>UNIT</td>
+                    <td>PRICE</td>
+                    <td>AMOUNT</td>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="userItem: ${userItems}">
+                <td th:text="${userItem.code}"/>
+                <td th:text="${userItem.unit}"/>
+                <td th:text="${userItem.price}"/>
+                <td th:text="${userItem.amount}"/>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/profile/additem}">
+            <button class="btn-cls btn-cls-small">ADD <i class="fa fa-plus" aria-hidden="true"></i></button>
+        </a>
+    </div>
+    <a th:href="@{/exchange}">
+        <button class="btn-cls btn-cls-small"><i class="fa fa-backward" aria-hidden="true"></i> BACK</button>
+    </a>
+</div>
+</body>
+</html>

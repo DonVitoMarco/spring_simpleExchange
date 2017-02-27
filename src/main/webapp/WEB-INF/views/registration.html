@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- META -->
+    <title>EXCHANGE</title>
+    <meta charset="UTF-8">
+    <!-- FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row center-container">
+        <div id="errorbox"></div>
+        <div class="border center fit">
+            <h1>REGISTRATION</h1>
+            <form name="f" th:action="@{/registration}" th:object="${user}" method="POST">
+                <table>
+                    <tr>
+                        <td>USERNAME:</td>
+                        <td><input type="text" th:field="*{username}" name="username" required="required" value=""></td>
+                    </tr>
+                    <tr>
+                        <td>PASSWORD:</td>
+                        <td><input type="password" th:field="*{password}" name="password" required="required" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>REPEAT PASSWORD:</td>
+                        <td><input type="password" th:field="*{machingPassword}" name="machingPassword"
+                                   required="required" value=""></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="btn-cls" name="submit" type="submit" value="REGISTER"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- SCRIPT -->
+<script src="../../script/error-registration.js"></script>
+
+</body>
+</html>

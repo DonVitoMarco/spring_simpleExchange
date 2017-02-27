@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- META -->
+    <title>EXCHANGE</title>
+    <meta charset="UTF-8">
+    <!-- FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row center-container">
+        <div class="border center fit">
+            <h1>SELL</h1>
+            <form name="f" th:object="${item}" th:action="@{'/sell/' + ${uuid}}" method="POST">
+                <table>
+                    <tr>
+                        <td>CODE:</td>
+                        <td><input type="text" th:field="*{code}" name="code" required="required" value="" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>UNIT:</td>
+                        <td><input type="text" th:field="*{unit}" name="unit" required="required" value="" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PRICE:</td>
+                        <td><input type="text" th:field="*{price}" name="price" required="required" value="" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>AMOUNT:</td>
+                        <td><input type="text" th:field="*{amount}" name="amount" required="required" value="" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><a th:href="@{/exchange}"><button class="btn-cls btn-cls-small"><i class="fa fa-backward" aria-hidden="true"></i> BACK</button></a></td>
+                        <td><input class="btn-cls btn-cls-small" name="submit" type="submit" value="SELL"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

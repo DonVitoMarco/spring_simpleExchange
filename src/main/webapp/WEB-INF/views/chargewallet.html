@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- META -->
+    <title>EXCHANGE</title>
+    <meta charset="UTF-8">
+    <!-- FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/simple-grid.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row center-container">
+        <div class="border center fit">
+            <h1>CHARGE WALLET</h1>
+            <form name="f" th:action="@{/profile/chargewallet}" th:object="${wallet}" method="POST">
+                <input type="text" th:field="*{amount}" name="text" required="required" value=""><br>
+                <input class="btn-cls" name="submit" type="submit" value="CHARGE">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
